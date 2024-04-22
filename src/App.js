@@ -20,7 +20,7 @@ function App() {
 
   const fetchJobOffers = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/job-offers");
+      const response = await fetch("/api/job-offers");
       if (response.ok) {
         const data = await response.json();
         setJobOffers(data);
