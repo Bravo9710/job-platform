@@ -23,11 +23,11 @@ app.use("/api/job-offers", jobOffersRoutes);
 app.use("/api/user-update", userUpdateRoutes);
 
 // Serve static files from the React build directory
-app.use(express.static(path.join("./client/build")));
+app.use(express.static(path.join(__dirname, "./client/build")));
 
 // Define route for serving React app
 app.get("*", (req, res) => {
-  res.sendFile(path.join("./client/build", "index.html"));
+  res.sendFile(path.join(__dirname, "./client/build", "index.html"));
 });
 
 // Start server

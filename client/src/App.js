@@ -33,7 +33,7 @@ function App() {
   };
 
   return (
-    <Router>
+    <Router basename="/client">
       <Header />
       <div className="container">
         <Routes>
