@@ -7,7 +7,7 @@ async function register(req, res) {
     console.log("Register request");
     await client.connect();
 
-    const database = client.db("react-native-app");
+    const database = client.db("job-offers");
     const collection = database.collection("users");
 
     // Check if user with the same email already exists
@@ -40,9 +40,10 @@ async function register(req, res) {
 
 async function login(req, res) {
   try {
+    console.log("Login request");
     await client.connect();
 
-    const database = client.db("react-native-app");
+    const database = client.db("job-offers");
     const collection = database.collection("users");
 
     // Find the user by email
