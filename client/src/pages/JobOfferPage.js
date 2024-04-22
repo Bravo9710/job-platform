@@ -1,5 +1,5 @@
 // client/src/pages/JobOfferPage.js
-import React, { useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 
 const JobOfferPage = ({ jobOffers }) => {
