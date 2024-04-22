@@ -4,7 +4,6 @@ const { client } = require("../utils/MongoConnection");
 
 async function register(req, res) {
   try {
-    console.log("Register request");
     await client.connect();
 
     const database = client.db("job-offers");
@@ -40,7 +39,6 @@ async function register(req, res) {
 
 async function login(req, res) {
   try {
-    console.log("Login request");
     await client.connect();
 
     const database = client.db("job-offers");

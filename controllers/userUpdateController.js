@@ -1,5 +1,3 @@
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
 const { client } = require("../utils/MongoConnection");
 
 async function updateUser(req, res) {

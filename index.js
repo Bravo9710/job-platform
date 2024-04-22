@@ -5,6 +5,7 @@ const jobOffersRoutes = require("./routes/jobOffersRoutes");
 const userUpdateRoutes = require("./routes/userUpdateRoutes");
 const { connectToMongoDB } = require("./utils/MongoConnection");
 const cors = require("cors");
+const path = require("path");
 
 const app = express();
 const PORT = process.env.PORT;
@@ -20,6 +21,14 @@ connectToMongoDB();
 app.use("/api/auth", authRoutes);
 app.use("/api/job-offers", jobOffersRoutes);
 app.use("/api/user-update", userUpdateRoutes);
+
+// Serve static files from the React build directory
+app.use(express.static(path.join(__dirname, "./client/build")));
+
+// Define route for serving React app
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "./client/build", "index.html"));
+});
 
 // Start server
 app.listen(PORT, () => {
